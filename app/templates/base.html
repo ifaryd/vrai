@@ -1,0 +1,190 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="fr">
+    
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Lesvraibolide | {% block title %}{% endblock title %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
+        <!-- Place favicon.ico in the root directory -->
+
+		<!-- CSS here -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+        <link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+        <link rel="stylesheet" href="{% static 'css/jarallax.css' %}">
+        <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+        <link rel="stylesheet" href="{% static 'css/odometer.css' %}">
+        <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+        <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+        <link rel="stylesheet" href="{% static 'css/default.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/perso.css' %}">
+        <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    </head>
+    <body>
+
+        <!-- preloader-start -->
+        <div class="preloader">
+            <div class="meter">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="subline"></div>
+                <div class="subline"></div>
+                <div class="subline"></div>
+                <div class="subline"></div>
+                <div class="subline"></div>
+                <div class="loader-circle-1">
+                    <div class="loader-circle-2"></div>
+                </div>
+                <span class="loadtext">Chargement</span>
+            </div>
+        </div>
+        <!-- preloader-end -->
+
+        
+        <!-- header-area -->
+        {% block header %}
+        {% endblock header %}
+        <!-- header-area-end -->
+
+
+        <!-- main-area -->
+        {% block content %}
+        {% endblock content %}
+        <!-- main-area-end -->
+
+
+
+        <!-- footer-area -->
+        <footer class="footer-bg" data-background="{%  static 'img/bg/footer_bg.jpg' %}">
+            <div class="footer-top-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="footer-widget black-bg mb-50">
+                                <div class="fw-title mb-30">
+                                    <h4 class="title">Contactez Nous</h4>
+                                </div>
+                                <div class="footer-text mb-45">
+                                    <p>lesvraibolide ce n’est pas que de la vente, c’est une façon différente d’aborder l’automobile.</p>
+                                </div>
+                                <div class="footer-contact">
+                                    <ul>
+                                        <li>
+                                            <div class="icon"><i class="fas fa-phone"></i></div>
+                                            <div class="content">
+                                                <span>Téléphone</span>
+                                                <p><a href="">+225 01 53 878 770</a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon"><i class="fas fa-envelope"></i></div>
+                                            <div class="content">
+                                                <span>EMAIL </span>
+                                                <p><a href=""><span class="" data-cfemail="97fef9f1f8d7e4e2e7e7f8e5e3b9f4f8fa">coulibalyzieisrael@gmail.com</span></a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                                            <div class="content">
+                                                <span>addresse</span>
+                                                <p>Riviera 4, Abidjan, Côte d'Ivoire</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="footer-right-wrap">
+                                <div class="row justify-content-between">
+                                    <div class="col-lg-3 col-md-3 col-sm-6">
+                                       
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6">
+                                        <div class="footer-widget mb-50">
+                                            <div class="fw-title mb-30">
+                                                <h4 class="title">Lien</h4>
+                                            </div>
+                                            <div class="fw-link">
+                                                <ul>
+                                                    <li><a href="accueil">Accueil</a></li>
+                                                    <li><a href="occasion">véhicules d'occasions</a></li>
+                                                    <li><a href="neuf">véhicules neufs</a></li>
+                                                    <li><a href="location">Location de véhicules</a></li>
+                                                    <li><a href="contact">Contacts</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer-payment-method-wrap">
+                                    <div class="content">
+                                        <p>Nous vous proposons des véhicules en excellent état et un suivi dans l'acquisition.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <div class="copyright-text">
+                                <p>by Israel COULIBALY</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="scroll-top scroll-to-target" data-target="html">
+                                <i class="fas fa-angle-up"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer-area-end -->
+
+
+
+
+
+		<!-- JS here -->
+        <script src="{% static 'js/vendor/jquery-3.5.0.min.js' %}"></script>
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/jquery.odometer.min.js' %}"></script>
+        <script src="{% static 'js/jquery.accrue.min.js' %}"></script>
+        <script src="{% static 'js/jquery.appear.js' %}"></script>
+        <script src="{% static 'js/jarallax.min.js' %}"></script>
+        <script src="{% static 'js/slick.min.js' %}"></script>
+        <script src="{% static 'js/ajax-form.js' %}"></script>
+        <script src="{% static 'js/wow.min.js' %}"></script>
+        <script src="{% static 'js/aos.js' %}"></script>
+        <script src="{% static 'js/plugins.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
+
+<!-- Mirrored from themebeyond.com/html/carnation/carnation/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Sep 2021 15:32:08 GMT -->
+</html>

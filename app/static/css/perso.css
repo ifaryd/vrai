@@ -1,0 +1,16 @@
+a.disabled {
+    pointer-events: none;
+}
+
+img.logoz{
+    width: 185px !important;
+}
+
+img.photo{
+    width: 100% !important;
+    height: 250px !important;
+}
+
+.clo{
+    color: #ff5400;
+}
