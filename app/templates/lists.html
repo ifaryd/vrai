@@ -33,33 +33,6 @@ Liste
     <!-- inventory-list-area -->
     <section class="inventory-list-area gray-lite-bg pt-120 pb-120">
         <div class="container">
-            <div class="inventory-meta-wrap mb-50">
-                <div class="row align-items-center">
-                    <div class="col-xl-8 col-lg-7 col-md-6">
-                        <div class="inventory-top-meta">
-                            <ul>
-                                <li class="find">Total Cars Find : <span>{{ voiture.count }}</span></li>
-                                <li class="filter d-none d-lg-flex">
-                                    <a href="#"><i class="flaticon-menu-1"></i></a>
-                                    <a class="active" href="#"><i class="flaticon-menu-3"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-5 col-md-6">
-                        <form action="#" class="inventory-short-meta">
-                            <label>Sort by :</label>
-                            <select name="name" class="selected">
-                                <option value="">New Listed : Newest</option>
-                                <option value="">Old Listed : Oldest</option>
-                                <option value="">Price High to Low</option>
-                                <option value="">Price Low to High</option>
-                                <option value="">Most Popular</option>
-                            </select>
-                        </form>
-                    </div>
-                </div>
-            </div>
             <div class="row justify-content-center">
                 <div class="col-xl-8 col-lg-7 col-md-9">
                     {% for voiture in voiture %}
@@ -67,7 +40,7 @@ Liste
                         <div class="inventory-list-thumb">
                             <img src="{{voiture.photo_face.url}}" alt="">
                             <ul class="inv-thumb-meta">
-                                <li><a href="{{voiture.photo_face.url}}" class="popup-image" data-toggle="tooltip" data-placement="top" data-original-title="Voir"><i class="fas fa-camera"></i></a></li>
+                                <li><a href="{% url 'detail' voiture.id %}"  data-toggle="tooltip" data-placement="top" data-original-title="Voir"><i class="fas fa-camera"></i></a></li>
                             </ul>
                         </div>
                         <div class="inventory-list-content">

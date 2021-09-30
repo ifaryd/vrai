@@ -26,3 +26,10 @@ def list(request):
         'marque':marque,
     }
     return render(request, 'lists.html', data)
+
+def detail(request, id):
+    voiture=Voiture.objects.get(pk=int(id))
+    data = {
+        'voiture':voiture,
+    }
+    return render(request, 'details.html', data)
