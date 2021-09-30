@@ -17,3 +17,12 @@ def index(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+def list(request):
+    voiture=Voiture.objects.all().order_by('-id')
+    marque= Marque.objects.all().order_by('marque')
+    data = {
+        'voiture':voiture,
+        'marque':marque,
+    }
+    return render(request, 'lists.html', data)

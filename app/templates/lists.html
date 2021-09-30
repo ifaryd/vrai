@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Liste
+{% endblock title %}
+
+
+
+{% block content %}
+<main>
+
+    <!-- breadcrumb-area -->
+    <section class="breadcrumb-area breadcrumb-bg" data-background="{%  static 'img/bg/breadcrumb_bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-content text-center">
+                        <h2>Véhicules d'occasions</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="home">Accueil</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Véhicules d'occasions</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb-area-end -->
+
+    <!-- inventory-list-area -->
+    <section class="inventory-list-area gray-lite-bg pt-120 pb-120">
+        <div class="container">
+            <div class="inventory-meta-wrap mb-50">
+                <div class="row align-items-center">
+                    <div class="col-xl-8 col-lg-7 col-md-6">
+                        <div class="inventory-top-meta">
+                            <ul>
+                                <li class="find">Total Cars Find : <span>{{ voiture.count }}</span></li>
+                                <li class="filter d-none d-lg-flex">
+                                    <a href="#"><i class="flaticon-menu-1"></i></a>
+                                    <a class="active" href="#"><i class="flaticon-menu-3"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-5 col-md-6">
+                        <form action="#" class="inventory-short-meta">
+                            <label>Sort by :</label>
+                            <select name="name" class="selected">
+                                <option value="">New Listed : Newest</option>
+                                <option value="">Old Listed : Oldest</option>
+                                <option value="">Price High to Low</option>
+                                <option value="">Price Low to High</option>
+                                <option value="">Most Popular</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-7 col-md-9">
+                    {% for voiture in voiture %}
+                    <div class="inventory-list-item">
+                        <div class="inventory-list-thumb">
+                            <img src="{{voiture.photo_face.url}}" alt="">
+                            <ul class="inv-thumb-meta">
+                                <li><a href="{{voiture.photo_face.url}}" class="popup-image" data-toggle="tooltip" data-placement="top" data-original-title="Voir"><i class="fas fa-camera"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="inventory-list-content">
+                            <div class="inv-content-top">
+                                <ul>
+                                    <li class="option">
+                                        
+                                    </li>
+                                    <li class="price">{{ voiture.prix }} FCFA<span></span></li>
+                                </ul>
+                            </div>
+                            <h4><a href="inventory-details.html">{{ voiture.marque }} {{ voiture.modele }}</a></h4>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> 71 - Wast San Park St, New york, NY 98517</p>
+                            <div class="inv-item-meta">
+                                <ul>
+                                    <li class="call"><a href="tel:0153878770"><i class="fas fa-phone-alt"></i>01 53 878 770</a></li>
+                                    <li>Année : {{ voiture.annee }}</li>
+                                    <li>{{ voiture.carburant }}</li>
+                                    <li>{{ voiture.kilometrage }} Km</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-xl-4 col-lg-5 col-md-9">
+                    <aside class="inventory-sidebar">
+                        <div class="widget inventory-widget">
+                            <div class="inv-widget-title mb-25">
+                                <h5 class="title">Find Perfect Vehicles</h5>
+                            </div>
+                            <form action="#" class="sidebar-find-car">
+                                <div class="form-grp search-box">
+                                    <input type="text" placeholder="Search">
+                                    <button><i class="fas fa-search"></i></button>
+                                </div>
+                                <div class="form-grp">
+                                    <i class="flaticon-placeholder-1"></i>
+                                    <input type="text" placeholder="Location">
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-grp">
+                                            <i class="flaticon-gasoline-pump"></i>
+                                            <input type="text" placeholder="Petrol">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-grp">
+                                            <i class="far fa-clock"></i>
+                                            <input type="text" value="2021">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-grp">
+                                    <i class="flaticon-car-4"></i>
+                                    <select name="name" class="selected">
+                                        <option value="">Car Type</option>
+                                        <option value="">Jaguer M1 Hybrid</option>
+                                        <option value="">Audi New Bom 800</option>
+                                        <option value="">Audi A8 Hybrid</option>
+                                        <option value="">Toyota T86LM</option>
+                                    </select>
+                                </div>
+                                <div class="form-grp">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <select name="name" class="selected">
+                                        <option value="">Price</option>
+                                        <option value="">$10000 - $15000</option>
+                                        <option value="">$15000 - $25000</option>
+                                        <option value="">$25000 - $35000</option>
+                                        <option value="">$35000 - $55000</option>
+                                        <option value="">$55000 - $100000</option>
+                                    </select>
+                                </div>
+                                <div class="form-grp">
+                                    <i class="flaticon-speedometer"></i>
+                                    <select name="name" class="selected">
+                                        <option value="">Transmission :</option>
+                                        <option value="">Manual Transmission</option>
+                                        <option value="">Gear Transmission</option>
+                                    </select>
+                                </div>
+                                <button class="btn">Find New Vehicles</button>
+                            </form>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- inventory-list-area-end -->
+
+</main>
+{% endblock content %}
+
+
