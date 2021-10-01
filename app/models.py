@@ -17,6 +17,11 @@ class Etat(models.Model):
     def __str__(self):
         return self.etat
 
+class Lieu(models.Model):
+    lieu = models.CharField(max_length=300)
+    def __str__(self):
+        return self.lieu
+
     
 class Voiture(models.Model):
     id = models.BigAutoField(primary_key=True,)
@@ -35,6 +40,7 @@ class Voiture(models.Model):
     marque = models.ForeignKey('Marque', on_delete=models.CASCADE, null=True, blank=True)
     modele = models.ForeignKey('Modele', on_delete=models.CASCADE, null=True, blank=True)
     etat = models.ForeignKey('Etat', on_delete=models.CASCADE, null=True, blank=True)
+    lieu = models.ForeignKey('Lieu', on_delete=models.CASCADE, null=True, blank=True)
     transmission = models.CharField(max_length=300, choices = TRANSMISSION)
     carburant = models.CharField(max_length=300, choices = CARBURANT)
     annee = models.IntegerField(choices=YEAR_CHOICES)
@@ -58,7 +64,7 @@ class Voiture(models.Model):
     photo_defaut3 = models.ImageField(upload_to='images/', null=True, blank=True)
     photo_defaut4 = models.ImageField(upload_to='images/', null=True, blank=True)
     photo_defaut5 = models.ImageField(upload_to='images/', null=True, blank=True)
-    Description = models.TextField()
+    description = models.TextField()
     date_ajout = models.DateField()
     def __str__(self):
         return str(self.marque)+ " " + str(self.modele) + " " + str(self.date_ajout)

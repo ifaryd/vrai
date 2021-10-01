@@ -19,7 +19,7 @@ Liste
                         <h2>Véhicules d'occasions</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="home">Accueil</a></li>
+                                <li class="breadcrumb-item"><a href="/home">Accueil</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Véhicules d'occasions</li>
                             </ol>
                         </nav>
@@ -52,8 +52,9 @@ Liste
                                     <li class="price">{{ voiture.prix }} FCFA<span></span></li>
                                 </ul>
                             </div>
-                            <h4><a href="inventory-details.html">{{ voiture.marque }} {{ voiture.modele }}</a></h4>
-                            <p class="location"><i class="fas fa-map-marker-alt"></i> 71 - Wast San Park St, New york, NY 98517</p>
+                            <h6><a href="{% url 'detail' voiture.id %}">{{ voiture.date_ajout }}</a></h6>
+                            <h4><a href="{% url 'detail' voiture.id %}">{{ voiture.marque }} {{ voiture.modele }}</a></h4>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> {{ voiture.lieu }} </p>
                             <div class="inv-item-meta">
                                 <ul>
                                     <li class="call"><a href="tel:0153878770"><i class="fas fa-phone-alt"></i>01 53 878 770</a></li>
@@ -70,7 +71,7 @@ Liste
                     <aside class="inventory-sidebar">
                         <div class="widget inventory-widget">
                             <div class="inv-widget-title mb-25">
-                                <h5 class="title">Find Perfect Vehicles</h5>
+                                <h5 class="title">Trouvez le véhicule parfait</h5>
                             </div>
                             <form action="#" class="sidebar-find-car">
                                 <div class="form-grp search-box">
@@ -79,30 +80,44 @@ Liste
                                 </div>
                                 <div class="form-grp">
                                     <i class="flaticon-placeholder-1"></i>
-                                    <input type="text" placeholder="Location">
+                                    <select name="name" class="selected">
+                                        <option value="">Lieu</option>
+                                        {% for lieu in lieu %}
+                                        <option value="{{ lieu }}">{{ lieu }}</option>
+                                        {% endfor %}
+                                    </select>
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="form-grp">
                                             <i class="flaticon-gasoline-pump"></i>
-                                            <input type="text" placeholder="Petrol">
+                                            <select name="name" class="selected">
+                                                <option value="">Carburant</option>
+                                                {% for carburant in voiture %}
+                                                <option value="{{ carburant }}">{{ carburant }}</option>
+                                                {% endfor %}
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-grp">
                                             <i class="far fa-clock"></i>
-                                            <input type="text" value="2021">
+                                            <select name="name" class="selected">
+                                                <option value="">Année</option>
+                                                {% for annee in voiture %}
+                                                <option value="{{ voiture.annee }}">{{ voiture.anne }}</option>
+                                                {% endfor %}
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-grp">
                                     <i class="flaticon-car-4"></i>
                                     <select name="name" class="selected">
-                                        <option value="">Car Type</option>
-                                        <option value="">Jaguer M1 Hybrid</option>
-                                        <option value="">Audi New Bom 800</option>
-                                        <option value="">Audi A8 Hybrid</option>
-                                        <option value="">Toyota T86LM</option>
+                                        <option value="">Marque</option>
+                                        {% for marque in marque %}
+                                        <option value="{{ marque }}">{{ marque }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                                 <div class="form-grp">
@@ -119,9 +134,10 @@ Liste
                                 <div class="form-grp">
                                     <i class="flaticon-speedometer"></i>
                                     <select name="name" class="selected">
-                                        <option value="">Transmission :</option>
-                                        <option value="">Manual Transmission</option>
-                                        <option value="">Gear Transmission</option>
+                                        <option value="">Transmission</option>
+                                        {% for n in voiture %}
+                                        <option value="{{ voiture.transmission }}">{{ voiture.transmission }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                                 <button class="btn">Find New Vehicles</button>

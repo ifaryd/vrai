@@ -7,5 +7,80 @@ Details
 
 
 {% block content %}
+<main>
 
+            <!-- breadcrumb-area -->
+            <section class="breadcrumb-area breadcrumb-bg inventory-details-breadcrumb" data-background="{%  static 'img/bg/breadcrumb_bg.jpg' %}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb-content text-center">
+                                <h2>{{ voiture.marque }} {{ voiture.modele }}</h2>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="home">Acceuil</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Voiture d'occasion</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb-area-end -->
+
+            <!-- inventory-details-slide -->
+            <div class="inventory-details-slide">
+                <div class="inv-details-meta-wrap">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 col-sm-7">
+                                <div class="inv-details-meta">
+                                    <div class="price-top">
+                                        <div class="price">{{ voiture.prix }}<span> FCFA</span></div>
+                                        <div class="tag"><li class="call"><a href="tel:0153878770"><i class="fas fa-phone-alt"></i>  01 53 878 770</a></li></div>
+                                    </div>
+                                    <div class="location">
+                                        <p><i class="flaticon-placeholder"></i> {{ voiture.lieu }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- inventory-details-slide-end -->
+
+            <!-- inventory-list-area -->
+            <section class="inventory-details-area gray-lite-bg pt-120 pb-120">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="inventory-features mb-30">
+                                <div class="inv-details-title">
+                                    <h5>Inventory Features</h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-4">
+                                        <div class="sidebar-fv-active">
+                                            <div class="sidebar-fv-item" data-background="{{voiture.photo_face.url}}">
+                                            </div>
+                                            <div class="sidebar-fv-item" data-background="img/images/sidebar_featured_vehicle02.jpg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inventory-details-description mb-30">
+                                <div class="inv-details-title">
+                                    <h5>Description</h5>
+                                </div>
+                                <p>{{ voiture.description }}</p>
+                            </div>
+                </div>
+            </section>
+            <!-- inventory-list-area-end -->
+
+        </main>
 {% endblock content %}

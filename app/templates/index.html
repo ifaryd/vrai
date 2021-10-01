@@ -21,7 +21,7 @@ Accueil
                     <div class="fact-area-title wow fadeInUp" data-wow-delay=".6s">Les vrais bolides <span class="left"></span><span class="right"></span></div>
                     <h2 class="wow fadeInUp" data-wow-delay=".9s">Trouvez la voiture parfaite</h2>
                     <p class="wow fadeInUp" data-wow-delay="1.2s">Achats, Ventes, Locations</p>
-                    <a href="#" class="btn wow fadeInUp" data-wow-delay="1.5s">Recherchez</a>
+                    <a href="/list" class="btn wow fadeInUp" data-wow-delay="1.5s">Recherchez</a>
                 </div>
             </div>
         </div>
@@ -81,7 +81,7 @@ Accueil
                 <div class="col-xl-5 col-lg-6">
                     <div class="section-title text-center mb-35">
                         <h2 class="overlay-title">Lesvraibolide</h2>
-                        <h2 class="title">Véhicule recents</h2>
+                        <h2 class="title">Véhicules recents</h2>
                     </div>
                     
                 </div>
@@ -93,13 +93,13 @@ Accueil
                     <div class="col-lg-4 col-md-6 grid-item grid-sizer cat-two">
                         <div class="latest-car-item mb-60">
                             <div class="latest-car-thumb mb-25">
-                                <a href="inventory-details.html">
+                                <a href="{% url 'detail' voiture.id %}">
                                     <img class="photo" src="{{voiture.photo_face.url}}" alt="">
                                 </a>
                             </div>
                             <div class="latest-car-content">
                                 <div class="latest-car-content-top">
-                                    <h5><a href="inventory-details.html">{{ voiture.marque }} {{ voiture.modele }}</a></h5>
+                                    <h5><a href="{% url 'detail' voiture.id %}">{{ voiture.marque }} {{ voiture.modele }}</a></h5>
                                     <span class="price">{{ voiture.prix }} </span>
                                 </div>
                                 <p>Annee : <span>{{ voiture.annee }}</span></p>
@@ -119,7 +119,7 @@ Accueil
                 <div class="row">
                     <div class="col-12">
                         <div class="latest-car-btn text-center mt-10">
-                            <a href="lists" class="btn">VOIR +</a>
+                            <a href="/list" class="btn">VOIR +</a>
                         </div>
                     </div>
                 </div>

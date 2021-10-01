@@ -21,9 +21,11 @@ def contact(request):
 def list(request):
     voiture=Voiture.objects.all().order_by('-id')
     marque= Marque.objects.all().order_by('marque')
+    lieu= Lieu.objects.all().order_by('lieu')
     data = {
         'voiture':voiture,
         'marque':marque,
+        'lieu':lieu,
     }
     return render(request, 'lists.html', data)
 
